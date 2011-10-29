@@ -76,6 +76,10 @@ public class MPPHW2Activity extends Activity {
         case menu_lastRecord:
              break;
         case menu_end:
+        	this.finish();
+        	
+        	
+        	
         	 break;
         default:
             return true;

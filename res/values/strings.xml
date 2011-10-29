@@ -4,4 +4,6 @@
     <string name="app_name">MPPHW2</string>
     <string name="menu_lastRecord">上次紀錄</string>
     <string name="menu_end">結束</string>
+    <string name="result_showData">身高&amp;體重</string>
+    <string name="result_changeStyle">改變文字顏色與大小</string>
 </resources>
