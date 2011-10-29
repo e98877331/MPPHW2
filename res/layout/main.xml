@@ -5,10 +5,10 @@
     android:layout_height="fill_parent"
     >
     <TextView android:text="身高(cm)" android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
-    <EditText android:layout_width="match_parent" android:id="@+id/editText1" android:layout_height="wrap_content">
+    <EditText android:layout_width="match_parent" android:id="@+id/editText1" android:layout_height="wrap_content" android:inputType="numberDecimal">
         <requestFocus></requestFocus>
     </EditText>
     <TextView android:text="體重(kg)" android:id="@+id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
-    <EditText android:layout_width="match_parent" android:id="@+id/editText2" android:layout_height="wrap_content"></EditText>
+    <EditText android:layout_width="match_parent" android:id="@+id/editText2" android:layout_height="wrap_content" android:inputType="number"></EditText>
     <Button android:id="@+id/button1" android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="計算BMI值"></Button>
 </LinearLayout>
