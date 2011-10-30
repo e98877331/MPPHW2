@@ -31,8 +31,8 @@ public class Result extends Activity {
 		
 	    bundle = this.getIntent().getExtras(); 
 	  
-		BigDecimal height = BigDecimal.valueOf((double)bundle.getInt("height")).divide(BigDecimal.valueOf(100));
-		BigDecimal weight = BigDecimal.valueOf((double)bundle.getInt("weight"));
+		BigDecimal height = BigDecimal.valueOf(Double.parseDouble(bundle.getString("height"))).divide(BigDecimal.valueOf(100));
+		BigDecimal weight = BigDecimal.valueOf(Double.parseDouble(bundle.getString("weight")));
 		BigDecimal bmi = weight.divide((height.multiply(height)),4,BigDecimal.ROUND_HALF_UP);
 		
 	
@@ -78,7 +78,7 @@ public class Result extends Activity {
 		switch (item.getItemId()) {
 		
         case SHOW_DATA:
-        	String show="身高:"+String.valueOf(bundle.getInt("height"))+"(cm) 體重："+String.valueOf(bundle.getInt("weight"))+ "(kg)";
+        	String show="身高:"+bundle.getString("height")+"(cm) 體重："+bundle.getString("weight")+ "(kg)";
         	bundle.getInt("height");
         	Toast.makeText(this,show, Toast.LENGTH_LONG).show();
         	return super.onMenuItemSelected(featureId, item);

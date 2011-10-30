@@ -44,13 +44,13 @@ public class MPPHW2Activity extends Activity {
                 	Toast.makeText(v.getContext(), "輸入錯誤(不可以為空白或0)", Toast.LENGTH_LONG).show();
                 	return;
                 }
-            	int height = Integer.valueOf(et1.getText().toString());
-            	int weight = Integer.valueOf(et2.getText().toString());
+            	String height = et1.getText().toString();
+            	String weight = et2.getText().toString();
             	Intent intent = new Intent(); 
             	intent.setClass(MPPHW2Activity.this, Result.class); 
             	Bundle bundle = new Bundle(); 
-            	bundle.putInt("height", height);
-            	bundle.putInt("weight", weight);
+            	bundle.putString("height", height);
+            	bundle.putString("weight", weight);
             	intent.putExtras(bundle); 
             	startActivity(intent); //這行一定要放在這函式的最後
             	
