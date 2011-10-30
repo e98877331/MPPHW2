@@ -4,6 +4,7 @@ package michael.com;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,13 +19,19 @@ public class MPPHW2Activity extends Activity {
 	static final int menu_end =1;
 	EditText et1;
 	EditText et2;
+	
+	//private SharedPreferences mPrefs;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+       // mPrefs = getSharedPreferences("X", MODE_PRIVATE); 
         et1 = (EditText)findViewById(R.id.editText1);
         et2 = (EditText)findViewById(R.id.editText2);
      
+        
+        
         Button button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -74,8 +81,16 @@ public class MPPHW2Activity extends Activity {
 		switch (item.getItemId()) {
 	
         case menu_lastRecord:
+        	
+        	 SharedPreferences settings = getSharedPreferences("HW2_DATA", 0);
+        	 //settings.getString("data_height", "");
+        	 //settings.getString("data_weight", "");
+        	 et1.setText(settings.getString("data_height", ""));
+        	 et2.setText(settings.getString("data_weight", ""));
+        	 
              break;
         case menu_end:
+        	storeData();
         	this.finish();
         	
         	
@@ -87,7 +102,27 @@ public class MPPHW2Activity extends Activity {
 		
 		return super.onMenuItemSelected(featureId, item);
 	}
+	
+	
 
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		storeData();
+		
+	}
+
+	public void storeData()
+	{
+		SharedPreferences settings = getSharedPreferences ("HW2_DATA", 0);
+	    SharedPreferences.Editor PE = settings.edit();
+	    PE.putString("data_height", et1.getText().toString());
+	    PE.putString("data_weight", et2.getText().toString());
+	    PE.commit();
+		
+	}
+	
 
     
 }
