@@ -13,7 +13,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="Result"></activity>
+        <activity android:name="Result" android:label="@string/result_name"></activity>
 
     </application>
 </manifest>

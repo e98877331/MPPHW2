@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, MPPHW2Activity!</string>
-    <string name="app_name">MPPHW2</string>
+    <string name="result_name">BMI 報告</string>
+    <string name="app_name">BMI</string>
     <string name="menu_lastRecord">上次紀錄</string>
     <string name="menu_end">結束</string>
     <string name="result_showData">身高&amp;體重</string>
